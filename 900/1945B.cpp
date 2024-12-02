@@ -31,8 +31,7 @@ int main()
         cin>>a>>b>>x;
          ans1 = x/a +1;
         ans2 = x/b +1;
-        
-        
+    
         
         cout<<ans1+ans2<<nl;
     }
