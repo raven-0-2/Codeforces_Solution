@@ -24,8 +24,50 @@ int main()
 {
 
     raven();
-    ll x;
-   cin>>x;
-   cout<<x;
+    While
+    {
+        ll m,a,b,c,i,s,ans=0;
+        cin>>m>>a>>b>>c;
+        s = m*2;
+        m =m;
+        m =m;
+        if(m>=a)
+        {
+            ans=ans+a;
+            if(m-a>=c)
+            {
+                ans+=c;
+                c=0;
+            }
+            else
+            {
+                ans+=(m-a);
+                c-=(m-a);
+            }
+        }
+        else 
+        {
+            ans+=m;
+        }
+
+        if(m>=b)
+        {
+            ans=ans+b;
+             if(m-b>=c)
+            {
+                ans+=c;
+            }
+            else
+            {
+                ans+=(m-b);
+            }
+        }
+        else 
+        {
+            ans+=m;
+        }
+        
+        cout<<ans<<nl;
+    }
     
 }
