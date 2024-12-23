@@ -26,48 +26,35 @@ int main()
     raven();
     While
     {
-        ll m,a,b,c,i,s,ans=0;
-        cin>>m>>a>>b>>c;
-        s = m*2;
-        m =m;
-        m =m;
-        if(m>=a)
-        {
-            ans=ans+a;
-            if(m-a>=c)
-            {
-                ans+=c;
-                c=0;
-            }
-            else
-            {
-                ans+=(m-a);
-                c-=(m-a);
-            }
-        }
-        else 
-        {
-            ans+=m;
-        }
+        ll x;
+        string st;
+        cin >> st;
+        x = stoi(st);
 
-        if(m>=b)
+        if (x % 33 == 0)
         {
-            ans=ans+b;
-             if(m-b>=c)
+            cout << YES;
+        }
+        else
+        {
+            for (int i = 0; i < st.size() - 1; i++)
             {
-                ans+=c;
+
+                if (st[i] == '3' && st[i + 1] == '3')
+                {
+                    st.erase(st.begin() + i, st.begin() + i + 1);
+                    i--;
+                }
+            }
+            x = stoi(st);
+            if (x % 33 == 0)
+            {
+                cout << YES;
             }
             else
             {
-                ans+=(m-b);
+                cout << NO;
             }
         }
-        else 
-        {
-            ans+=m;
-        }
-        
-        cout<<ans<<nl;
     }
-    
 }
