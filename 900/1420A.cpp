@@ -27,40 +27,26 @@ int main()
 
     While
     {
-        ll x, i, sum = 0, ans = 0, big = 0;
+        ll x, i, j, temp, sum = 0, tar, total;
         cin >> x;
+        total = ((x * (x - 1)) / 2) - 1;
         vector<ll> v;
-        map<ll, ll> m;
         for (i = 0; i < x; i++)
         {
-            ll temp;
-
             cin >> temp;
-
-            if (temp > big)
-            {
-                big = temp;
-            }
-
-            m[temp]++;
+            v.push_back(temp);
         }
-        // if (m[big] % 2 != 0)
-        // {
-        //     cout << YES;
-        // }
-        // else
-        // {
-        ll odd = 0;
-        bool flag = false; 
-        for (auto a : m)
+        bool f = false;
+        for (i = 0; i < x-1; i++)
         {
-            if (a.second % 2 != 0)
+            if(v[i] <= v[i+1])
             {
-                flag=true ;
+                f = true;
                 break;
             }
+            
         }
-        cout<<(flag?YES : NO);
-        //}
+        //cout<<total<<" "<<sum;
+        cout<<(f ? YES : NO);
     }
 }

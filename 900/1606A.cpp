@@ -29,67 +29,73 @@ int main()
     {
         string st;
         cin >> st;
-        ll i=0, j=0, ab = 0, ba = 0;
-        for (i = 0; i < st.size() - 1; i++)
+        ll i = 0, j = 0, ab = 0, ba = 0;
+
+        while (1)
         {
-            if (st[i] == 'a' && st[i + 1] == 'b')
+
+            for (i = 0; i < st.size() - 1; i++)
             {
-                ab++;
+                if (st[i] == 'a' && st[i + 1] == 'b')
+                {
+                    ab++;
+                }
+                if (st[i] == 'b' && st[i + 1] == 'a')
+                {
+                    ba++;
+                }
             }
-            if (st[i] == 'b' && st[i + 1] == 'a')
+            if (ab == ba)
             {
-                ba++;
+                cout << st<< nl;
+                break;
             }
-        }
-        if(ab==ba)
-        {
-            cout<<st;
-        }
-        else if(ab>ba)
-        {  
-            for(i=0;i<st.size()-1;i++)
+            else if (ab > ba)
             {
+                for (i = 0; i < st.size() - 1; i++)
+                {
+
+                    if (st[i] == 'a' && st[i + 1] == 'b')
+                    {
+                        if (st[i - 1] == 'b' || i == 0)
+                        {
+                            st[i] = 'b';
+                        }
+                        else if (st[i + 2] == 'a' || i + 2 == st.size())
+                        {
+                            st[i + 1] = 'a';
+                        }
+                        ab--;
+                    }
+                    if (ab == ba)
+                        break;
+                }
                
-                if(st[i] == 'a' && st[i+1] =='b' )
-                {
-                    if(st[i-1] == 'b' || i==0)
-                    {
-                        st[i] ='b';
-                    }
-                    else if(st[i+2] == 'a' || i+2 == st.size() )
-                    {
-                        st[i+1] ='a';
-                    }
-                    ab--;
-                }
-                if(ab == ba) break;
             }
-            cout<<st;
-        }
-        else if(ab<ba )
-        {
-            for(i=0;i<st.size()-1;i++)
+            else if (ab < ba)
             {
-                if(st[i] == 'b' && st[i+1] =='a' )
+                for (i = 0; i < st.size() - 1; i++)
                 {
-                    if(st[i-1] == 'a' || i==0)
+                    if (st[i] == 'b' && st[i + 1] == 'a')
                     {
-                        st[i] ='a';
+                        if (st[i - 1] == 'a' || i == 0)
+                        {
+                            st[i] = 'a';
+                        }
+                        else if (st[i + 2] == 'b' || i + 2 == st.size())
+                        {
+                            st[i + 1] = 'b';
+                        }
+                        ba--;
                     }
-                    else if(st[i+2] == 'b' || i+2 == st.size() )
+                    if (ab == ba)
                     {
-                        st[i+1] ='b';
+                        break;
                     }
-                    ba--;
                 }
-                if(ab==ba)
-                {
-                    break;
-                }
+                
             }
-            cout<<st;
+            
         }
-        cout<<nl;
     }
-    
 }

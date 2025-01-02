@@ -44,21 +44,32 @@ ll binarySearch(ll ar[], ll s, ll e, ll target)
     }
 }
 
-const ll N = 10e6;
-ll p[N];
-void Tp()
+bool mb(ll t)
 {
-    for(ll i=1;i<N;i++)
+    ll L = 10e9 ,i,j,tar=t,f=0,m;
+    while(L>=f)
     {
-        p[i] = i*i;
+         m=(L+f)/2;
+         if(m*m == tar)return 1;
+         else if(tar>m*m)
+         {
+            f = m+1;
+         }
+         else
+         {
+            L = m-1;
+         }
+
     }
+    return 0;
 }
+
 
 int main()
 {
 
     raven();
-    Tp();
+    
 
     While
     {
@@ -69,9 +80,11 @@ int main()
         for(i=0;i<x;i++)
         {
             cin>>temp;
+
             ans+=temp;
         }
-        if(binarySearch(p ,0,N-1,ans) >0)
+        //cout<<;
+        if(mb(ans))
         {
             cout<<YES;
         }

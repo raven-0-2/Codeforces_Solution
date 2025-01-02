@@ -5,13 +5,6 @@ using namespace std;
 #define ll long long
 #define YES "YES\n"
 #define NO "NO\n"
-#define Yes "Yes\n"
-#define No "No\n"
-#define ck cout << '*' << nl;
-#define While \
-    ll t;     \
-    cin >> t; \
-    while (t--)
 
 void raven()
 {
@@ -22,39 +15,14 @@ void raven()
 
 int main()
 {
-
     raven();
-    While
-    {
-        ll x;
-        string st;
-        cin >> st;
-        x = stoi(st);
 
-        if (x % 33 == 0)
-        {
-            cout << YES;
-        }
-        else
-        {
-            for (int i = 0; i < st.size() - 1; i++)
-            {
+    ll t;
+    
 
-                if (st[i] == '3' && st[i + 1] == '3')
-                {
-                    st.erase(st.begin() + i, st.begin() + i + 1);
-                    i--;
-                }
-            }
-            x = stoi(st);
-            if (x % 33 == 0)
-            {
-                cout << YES;
-            }
-            else
-            {
-                cout << NO;
-            }
-        }
-    }
+    string st="CADW";
+    sort(st.begin(),st.end());
+    cout<<st;
+
+    return 0;
 }
