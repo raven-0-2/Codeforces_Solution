@@ -36,24 +36,43 @@ int main()
             v.push_back(j);
         }
         sort(v.begin(), v.end(), greater<ll>());
-        for (i = 0; i < x; i++)
-        {
-            if (sum < k)
-            {
 
-                sum += v[i];
-            }
-
-            if (sum + v[i + 1] >= k && i < x)
-            {
-                cout << k - sum;
-                break;
-            }
-        }
-        if (i == x)
+        for (i = 0; i < x - 1; i++)
         {
-            cout << k - sum;
+            v[i + 1] = v[i] + v[i + 1];
         }
+        for (i = 0; i < x - 1; i++)
+        {
+            if (v[i] <= k && v[i + 1] > k)
+            {
+                cout << k - v[i];
+            }
+            
+        }
+        if(k>=v[x-1])
+        {
+            cout<<k-v[x-1];
+        }
+
+        // for(auto a:v)
+        // {
+        //     cout<<a;
+        // }
+        // for (i = 0; i < x; i++)
+        // {
+
+        //     if (sum + v[i + 1] >= k && i+1 != x)
+        //     {
+        //         cout << k - sum;
+        //         break;
+        //     }
+        //     if (sum < k)
+        //     {
+
+        //         sum += v[i];
+        //     }
+        // }
+
         cout << nl;
     }
 }

@@ -19,46 +19,38 @@ void raven()
     cin.tie(0);
     cout.tie(0);
 }
-void tc()
-{
-    ll x ,sum=0,temp;
-    while(1)
-    {
-        cin>>x>>temp;
-        if(x==0)
-        {
-            cout<<sum;
-            break;
-        }
-        sum++;
-        for(int i=0;i<x;i++)
-        {
-            cin>>temp;
-        }
-    }
-}
-
-void a()
-{
-    ll x ,sum=0,temp;
-    string st;
-    while(1)
-    {
-        cin>>st;
-        if(st == "*")
-        {
-            cout<<sum;
-            break;
-        }
-        sum++;
-    }
-}
 
 int main()
 {
 
     raven();
+
+    While
+    {
+        ll x,k,i,j=1;
+        cin>>x>>k;
+
+        ll ar[x] ={0};
+
+        for(i=k-1;i<x;i+=k)
+        {
+            ar[i] =j;
+            j++;
+        }
+        for(i=0;i<x;i++)
+        {
+            if(!ar[i])
+            {
+                ar[i]=j;
+                j++;
+            }
+        }
+
+        for(i=0;i<x;i++)
+        {
+            cout<<ar[i]<<" ";
+        }
+        cout<<nl;
+    }
     
-    a();
-    //tc();
 }
